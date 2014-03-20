@@ -3,11 +3,11 @@ bftp
 
 Transpiler from brainfuck to c.
 
-##Build
+###Build
 `gcc -O3 -std=c99 -o bftp bftp.c`
-
-##Usage
+###Usage
 `./compile.sh source.bf out`
 
-Or
+or
+
 `./bftp source.bf | gcc -O3 -o out -xc -`
