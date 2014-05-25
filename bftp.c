@@ -1,56 +1,60 @@
-
-#include "stdio.h"
-#include "string.h"
+#include <stdio.h>
+#include <string.h>
 
 int main(int argc, char const *argv[])
 {
 	char source[1000];
 	FILE *fp;
+
 	if(argc > 1) {
 		fp = fopen(argv[1], "r");
+
 		if(fp == NULL) {
 			perror("Error opening file");
 			return -1;
 		}
-		fread(source,sizeof(char), 1000, fp);
-			
-		
-		printf("%s\n", "#include \"stdio.h\"\n\nint main() {");
-		printf("%s\n", "char array[100000];");
-		printf("%s\n", "char *ptr=array;");
-		for (int i = 0; i < strlen(source); ++i)
-		{
+
+		fread(source, sizeof(char), 1000, fp);
+
+
+		puts("#include \"stdio.h\"\n\n"
+                     "int main() {\n"
+                     "char array[100000];\n"
+                     "memset(array, 0, 100000);\n"
+                     "char *ptr=array;\n");
+
+		for (int i = 0; i < strlen(source); ++i) {
 			switch(source[i]) {
 			case '>':
-				printf("%s\n", "++ptr;");
+				puts("++ptr;");
 				break;
 			case '<':
-				printf("%s\n", "--ptr;");
+				puts("--ptr;");
 				break;
 			case '+':
-				printf("%s\n", "++*ptr;");
+				puts("++*ptr;");
 				break;
 			case '-':
-				printf("%s\n", "--*ptr;");
+				puts("--*ptr;");
 				break;
 			case '.':
-				printf("%s\n", "putchar(*ptr);");
+				puts("putchar(*ptr);");
 				break;
 			case ',':
-				printf("%s\n", "*ptr=getchar();");
+				puts("*ptr=getchar();");
 				break;
 			case '[':
-				printf("%s\n", "while(*ptr) {");
+				puts("while(*ptr) {");
 				break;
 			case ']':
-				printf("%s\n", "}");
+				puts("}");
 				break;
 			}
 		}
 
-		printf("%s\n", "}");
+		puts("}");
 	} else {
-		printf("%s\n", "No file given.");
+		puts("No file given.");
 	}
 	return 0;
 }
