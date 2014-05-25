@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="bftp : Transpiler from brainfuck to c" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>bftp</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/dukky/bftp">View on GitHub</a>
+
+          <h1 id="project_title">bftp</h1>
+          <h2 id="project_tagline">Transpiler from brainfuck to c</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/dukky/bftp/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/dukky/bftp/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="bftp" class="anchor" href="#bftp"><span class="octicon octicon-link"></span></a>bftp</h1>
+
+<p>Transpiler from brainfuck to c.</p>
+
+<h3>
+<a name="build" class="anchor" href="#build"><span class="octicon octicon-link"></span></a>Build</h3>
+
+<p><code>gcc -O3 -std=c99 -o bftp bftp.c</code></p>
+
+<h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<p><code>./compile.sh hellobrainfuck.bf out</code></p>
+
+<p>or</p>
+
+<p><code>./bftp hellobrainfuck.bf | gcc -O3 -o out -xc -</code></p>
+
+<p><code>./out</code> : <code>Hello World!</code></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">bftp maintained by <a href="https://github.com/dukky">dukky</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
