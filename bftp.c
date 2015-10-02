@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
 
 
 		puts("#include \"stdio.h\"\n"
-					 "#include \"string.h\"\n\n"
+                     "#include \"string.h\"\n\n"
                      "int main() {\n"
                      "char array[100000];\n"
                      "memset(array, 0, 100000);\n"
