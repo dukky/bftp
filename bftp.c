@@ -17,7 +17,8 @@ int main(int argc, char const *argv[])
 		fread(source, sizeof(char), 1000, fp);
 
 
-		puts("#include \"stdio.h\"\n\n"
+		puts("#include \"stdio.h\"\n"
+					 "#include \"string.h\"\n\n"
                      "int main() {\n"
                      "char array[100000];\n"
                      "memset(array, 0, 100000);\n"
