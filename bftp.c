@@ -3,7 +3,7 @@
 
 int main(int argc, char const *argv[])
 {
-	char source[1000];
+	char source[100000];
 	FILE *fp;
 
 	if(argc > 1) {
@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
 			return -1;
 		}
 
-		fread(source, sizeof(char), 1000, fp);
+		fread(source, sizeof(char), 100000, fp);
 
 
 		puts("#include \"stdio.h\"\n"
